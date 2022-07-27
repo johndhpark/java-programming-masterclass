@@ -6,6 +6,5 @@ public class Main {
     long johnLongSum = 50000L + 10L * (johnByteNum + johnIntNum + johnShortNum);
 
     System.out.println("Long Sum: " + johnLongSum);
-
   }
 }

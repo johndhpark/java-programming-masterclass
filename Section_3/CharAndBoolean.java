@@ -8,10 +8,10 @@ public class CharAndBoolean {
 		char myCopyRight = '\u00A9';
 		System.out.println(myCopyRight);
 
-		boolean myTrueBooleanValue = true;
-		boolean myFalseBooleanValue = false;
+		// boolean myTrueBooleanValue = true;
+		// boolean myFalseBooleanValue = false;
 
-		boolean isCustomerOverTwentyOne = true;
+		// boolean isCustomerOverTwentyOne = true;
 
 	}
 }

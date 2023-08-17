@@ -4,6 +4,5 @@ class Main {
         customer.printInfo();
 
         // Customer secondCustomer = new Customer();
-        Customer secondCustomer = new Customer();
     }
 }

@@ -1,74 +1,73 @@
-
 package com.johndhpark;
 
 import java.io.*;
 import java.util.*;
 
 public class Main {
-    private static Scanner scanner = new Scanner(System.in);
+  private static Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args) throws IOException {
-        ArrayList<String> groceries = new ArrayList<>();
+  public static void main(String[] args) throws IOException {
+    ArrayList<String> groceries = new ArrayList<>();
 
-        boolean flag = true;
+    boolean flag = true;
 
-        while (flag) {
-            printActions();
+    while (flag) {
+      printActions();
 
-            int action = Integer.parseInt(scanner.nextLine());
+      int action = Integer.parseInt(scanner.nextLine());
 
-            switch (action) {
-                case 1 -> addItems(groceries);
-                case 2 -> removeItems(groceries);
-                default -> flag = false;
-            }
+      switch (action) {
+        case 1 -> addItems(groceries);
+        case 2 -> removeItems(groceries);
+        default -> flag = false;
+      }
 
-            groceries.sort(Comparator.naturalOrder());
+      groceries.sort(Comparator.naturalOrder());
 
-            System.out.println("Sorted grocery list: " + groceries);
-        }
-
-        scanner.close();
-
+      System.out.println("Sorted grocery list: " + groceries);
     }
 
-    public static void addItems(List<String> groceries) {
-        System.out.println(
-                "Add items(s) [separate items by comma]:");
+    scanner.close();
 
-        String[] items = scanner.nextLine().split(",");
+  }
 
-        for (String i : items) {
-            String trimmed = i.trim();
+  public static void addItems(List<String> groceries) {
+    System.out.println(
+        "Add items(s) [separate items by comma]:");
 
-            if (groceries.indexOf(trimmed) < 0) {
-                groceries.add(trimmed);
-            }
-        }
+    String[] items = scanner.nextLine().split(",");
+
+    for (String i : items) {
+      String trimmed = i.trim();
+
+      if (groceries.indexOf(trimmed) < 0) {
+        groceries.add(trimmed);
+      }
     }
+  }
 
-    public static void removeItems(List<String> groceries) {
-        System.out.println("Remove items [separate items by comma]:");
-        String[] items = scanner.nextLine().split(",");
+  public static void removeItems(List<String> groceries) {
+    System.out.println("Remove items [separate items by comma]:");
+    String[] items = scanner.nextLine().split(",");
 
-        for (String i : items) {
-            String trimmed = i.trim();
-            groceries.remove(trimmed);
-        }
+    for (String i : items) {
+      String trimmed = i.trim();
+      groceries.remove(trimmed);
     }
+  }
 
-    public static void printActions() {
-        String textBlock = """
-                Available actions:
+  public static void printActions() {
+    String textBlock = """
+        Available actions:
 
-                0 - to shutdown
+        0 - to shutdown
 
-                1 - to add item(s) to list (comma delimited list)
+        1 - to add item(s) to list (comma delimited list)
 
-                2 - to remove any items (comma delimited list)
+        2 - to remove any items (comma delimited list)
 
-                Enter a number for which action you want to do: """;
+        Enter a number for which action you want to do: """;
 
-        System.out.print(textBlock + " ");
-    }
+    System.out.print(textBlock + " ");
+  }
 }

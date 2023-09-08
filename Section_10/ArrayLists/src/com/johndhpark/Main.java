@@ -14,7 +14,7 @@ record GroceryItem(String name, String type, int count) {
     }
 }
 
-class Main {
+public class Main {
     public static void main(String[] args) {
         GroceryItem[] groceryArray = new GroceryItem[3];
         groceryArray[0] = new GroceryItem("milk");
